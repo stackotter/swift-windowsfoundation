@@ -3,7 +3,6 @@
 import Foundation
 import CWinRT
 
-@_spi(WinRTInternal)
 public enum __IMPL_Windows_Foundation_Collections {
     public enum IPropertySetBridge : AbiInterfaceBridge {
         public typealias CABI = __x_ABI_CWindows_CFoundation_CCollections_CIPropertySet
@@ -37,10 +36,10 @@ public enum __IMPL_Windows_Foundation_Collections {
           .init(
             add: { [weak self] in
               guard let this = self?._IObservableMap else { return .init() }
-              return try! this.add_MapChanged($0)
+              return try! this.add_MapChangedImpl($0)
             },
             remove: { [weak self] in
-             try? self?._IObservableMap.remove_MapChanged($0)
+             try? self?._IObservableMap.remove_MapChangedImpl($0)
            }
           )
         }()
@@ -48,43 +47,43 @@ public enum __IMPL_Windows_Foundation_Collections {
         private lazy var _IMap: IMapString_Any! = getInterfaceForCaching()
         /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.ipropertyset.lookup)
         fileprivate func lookup(_ key: String) -> Any? {
-            try! _IMap.Lookup(key)
+            try! _IMap.LookupImpl(key)
         }
 
         /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.ipropertyset.haskey)
         fileprivate func hasKey(_ key: String) -> Bool {
-            try! _IMap.HasKey(key)
+            try! _IMap.HasKeyImpl(key)
         }
 
         /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.ipropertyset.getview)
         fileprivate func getView() -> AnyIMapView<String, Any?>? {
-            try! _IMap.GetView()
+            try! _IMap.GetViewImpl()
         }
 
         /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.ipropertyset.insert)
         fileprivate func insert(_ key: String, _ value: Any?) -> Bool {
-            try! _IMap.Insert(key, value)
+            try! _IMap.InsertImpl(key, value)
         }
 
         /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.ipropertyset.remove)
         fileprivate func remove(_ key: String) {
-            try! _IMap.Remove(key)
+            try! _IMap.RemoveImpl(key)
         }
 
         /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.ipropertyset.clear)
         fileprivate func clear() {
-            try! _IMap.Clear()
+            try! _IMap.ClearImpl()
         }
 
         /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.ipropertyset.size)
         fileprivate var size : UInt32 {
-            get { try! _IMap.get_Size() }
+            get { try! _IMap.get_SizeImpl() }
         }
 
         private lazy var _IIterable: IIterableIKeyValuePairString_Any! = getInterfaceForCaching()
         /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.ipropertyset.first)
         fileprivate func first() -> AnyIIterator<AnyIKeyValuePair<String, Any?>?>? {
-            try! _IIterable.First()
+            try! _IIterable.FirstImpl()
         }
 
     }
@@ -114,78 +113,14 @@ public enum __IMPL_Windows_Foundation_Collections {
 
         /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.ivectorchangedeventargs.collectionchange)
         fileprivate var collectionChange : CollectionChange {
-            get { try! _default.get_CollectionChange() }
+            get { try! _default.get_CollectionChangeImpl() }
         }
 
         /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.ivectorchangedeventargs.index)
         fileprivate var index : UInt32 {
-            get { try! _default.get_Index() }
+            get { try! _default.get_IndexImpl() }
         }
 
     }
 
-    public enum PropertySetBridge: AbiBridge {
-        public typealias SwiftProjection = PropertySet
-        public typealias CABI = __x_ABI_CWindows_CFoundation_CCollections_CIPropertySet
-        public static func from(abi: ComPtr<__x_ABI_CWindows_CFoundation_CCollections_CIPropertySet>?) -> PropertySet? {
-            guard let abi = abi else { return nil }
-            return .init(fromAbi: WindowsFoundation.IInspectable(abi))
-        }
-    }
-
-    public enum StringMapBridge: AbiBridge {
-        public typealias SwiftProjection = StringMap
-        public typealias CABI = __x_ABI_C__FIMap_2_HSTRING_HSTRING
-        public static func from(abi: ComPtr<__x_ABI_C__FIMap_2_HSTRING_HSTRING>?) -> StringMap? {
-            guard let abi = abi else { return nil }
-            return .init(fromAbi: WindowsFoundation.IInspectable(abi))
-        }
-    }
-
-    public enum ValueSetBridge: AbiBridge {
-        public typealias SwiftProjection = ValueSet
-        public typealias CABI = __x_ABI_CWindows_CFoundation_CCollections_CIPropertySet
-        public static func from(abi: ComPtr<__x_ABI_CWindows_CFoundation_CCollections_CIPropertySet>?) -> ValueSet? {
-            guard let abi = abi else { return nil }
-            return .init(fromAbi: WindowsFoundation.IInspectable(abi))
-        }
-    }
-
-}
-@_spi(WinRTInternal)
-public class IPropertySetMaker: MakeFromAbi {
-    public typealias SwiftType = AnyIPropertySet
-    public static func from(abi: WindowsFoundation.IInspectable) -> SwiftType {
-        let swiftAbi: __ABI_Windows_Foundation_Collections.IPropertySet = try! abi.QueryInterface()
-        return __IMPL_Windows_Foundation_Collections.IPropertySetBridge.from(abi: RawPointer(swiftAbi))!
-    }
-}
-@_spi(WinRTInternal)
-public class IVectorChangedEventArgsMaker: MakeFromAbi {
-    public typealias SwiftType = AnyIVectorChangedEventArgs
-    public static func from(abi: WindowsFoundation.IInspectable) -> SwiftType {
-        let swiftAbi: __ABI_Windows_Foundation_Collections.IVectorChangedEventArgs = try! abi.QueryInterface()
-        return __IMPL_Windows_Foundation_Collections.IVectorChangedEventArgsBridge.from(abi: RawPointer(swiftAbi))!
-    }
-}
-@_spi(WinRTInternal)
-public class PropertySetMaker: MakeFromAbi {
-    public typealias SwiftType = PropertySet
-    public static func from(abi: WindowsFoundation.IInspectable) -> SwiftType {
-        return PropertySet(fromAbi: abi)
-    }
-}
-@_spi(WinRTInternal)
-public class StringMapMaker: MakeFromAbi {
-    public typealias SwiftType = StringMap
-    public static func from(abi: WindowsFoundation.IInspectable) -> SwiftType {
-        return StringMap(fromAbi: abi)
-    }
-}
-@_spi(WinRTInternal)
-public class ValueSetMaker: MakeFromAbi {
-    public typealias SwiftType = ValueSet
-    public static func from(abi: WindowsFoundation.IInspectable) -> SwiftType {
-        return ValueSet(fromAbi: abi)
-    }
 }

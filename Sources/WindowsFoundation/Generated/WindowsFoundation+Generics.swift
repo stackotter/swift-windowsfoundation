@@ -44,10 +44,10 @@ internal var __x_ABI_C__FIIterable_1___x_ABI_C__FIKeyValuePair_2_HSTRING_IInspec
     }
 )
 typealias __x_ABI_C__FIIterable_1___x_ABI_C__FIKeyValuePair_2_HSTRING_IInspectableWrapper = InterfaceWrapperBase<WindowsFoundation.__x_ABI_C__FIIterable_1___x_ABI_C__FIKeyValuePair_2_HSTRING_IInspectableBridge>
-public class IIterableIKeyValuePairString_Any: WindowsFoundation.IInspectable {
+internal class IIterableIKeyValuePairString_Any: WindowsFoundation.IInspectable {
     override public class var IID: WindowsFoundation.IID { IID___x_ABI_C__FIIterable_1___x_ABI_C__FIKeyValuePair_2_HSTRING_IInspectable }
 
-    open func First() throws -> WindowsFoundation.AnyIIterator<WindowsFoundation.AnyIKeyValuePair<String, Any?>?>? {
+    internal func FirstImpl() throws -> WindowsFoundation.AnyIIterator<WindowsFoundation.AnyIKeyValuePair<String, Any?>?>? {
         let (result) = try ComPtrs.initialize { resultAbi in
             _ = try perform(as: __x_ABI_C__FIIterable_1___x_ABI_C__FIKeyValuePair_2_HSTRING_IInspectable.self) { pThis in
                 try CHECKED(pThis.pointee.lpVtbl.pointee.First(pThis, &resultAbi))
@@ -84,7 +84,7 @@ fileprivate class __x_ABI_C__FIIterable_1___x_ABI_C__FIKeyValuePair_2_HSTRING_II
     // MARK: WinRT
     /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.iiterable-1.first)
     fileprivate func first() -> WindowsFoundation.AnyIIterator<WindowsFoundation.AnyIKeyValuePair<String, Any?>?>? {
-        try! _default.First()
+        try! _default.FirstImpl()
     }
 
     public func queryInterface(_ iid: WindowsFoundation.IID) -> IUnknownRef? { nil }
@@ -131,10 +131,10 @@ internal var __x_ABI_C__FIIterable_1___x_ABI_C__FIKeyValuePair_2_HSTRING_HSTRING
     }
 )
 typealias __x_ABI_C__FIIterable_1___x_ABI_C__FIKeyValuePair_2_HSTRING_HSTRINGWrapper = InterfaceWrapperBase<WindowsFoundation.__x_ABI_C__FIIterable_1___x_ABI_C__FIKeyValuePair_2_HSTRING_HSTRINGBridge>
-public class IIterableIKeyValuePairString_String: WindowsFoundation.IInspectable {
+internal class IIterableIKeyValuePairString_String: WindowsFoundation.IInspectable {
     override public class var IID: WindowsFoundation.IID { IID___x_ABI_C__FIIterable_1___x_ABI_C__FIKeyValuePair_2_HSTRING_HSTRING }
 
-    open func First() throws -> WindowsFoundation.AnyIIterator<WindowsFoundation.AnyIKeyValuePair<String, String>?>? {
+    internal func FirstImpl() throws -> WindowsFoundation.AnyIIterator<WindowsFoundation.AnyIKeyValuePair<String, String>?>? {
         let (result) = try ComPtrs.initialize { resultAbi in
             _ = try perform(as: __x_ABI_C__FIIterable_1___x_ABI_C__FIKeyValuePair_2_HSTRING_HSTRING.self) { pThis in
                 try CHECKED(pThis.pointee.lpVtbl.pointee.First(pThis, &resultAbi))
@@ -171,7 +171,7 @@ fileprivate class __x_ABI_C__FIIterable_1___x_ABI_C__FIKeyValuePair_2_HSTRING_HS
     // MARK: WinRT
     /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.iiterable-1.first)
     fileprivate func first() -> WindowsFoundation.AnyIIterator<WindowsFoundation.AnyIKeyValuePair<String, String>?>? {
-        try! _default.First()
+        try! _default.FirstImpl()
     }
 
     public func queryInterface(_ iid: WindowsFoundation.IID) -> IUnknownRef? { nil }
@@ -218,10 +218,10 @@ internal var __x_ABI_C__FIIterable_1___x_ABI_CWindows__CFoundation__CIWwwFormUrl
     }
 )
 typealias __x_ABI_C__FIIterable_1___x_ABI_CWindows__CFoundation__CIWwwFormUrlDecoderEntryWrapper = InterfaceWrapperBase<WindowsFoundation.__x_ABI_C__FIIterable_1___x_ABI_CWindows__CFoundation__CIWwwFormUrlDecoderEntryBridge>
-public class IIterableIWwwFormUrlDecoderEntry: WindowsFoundation.IInspectable {
+internal class IIterableIWwwFormUrlDecoderEntry: WindowsFoundation.IInspectable {
     override public class var IID: WindowsFoundation.IID { IID___x_ABI_C__FIIterable_1___x_ABI_CWindows__CFoundation__CIWwwFormUrlDecoderEntry }
 
-    open func First() throws -> WindowsFoundation.AnyIIterator<WindowsFoundation.AnyIWwwFormUrlDecoderEntry?>? {
+    internal func FirstImpl() throws -> WindowsFoundation.AnyIIterator<WindowsFoundation.AnyIWwwFormUrlDecoderEntry?>? {
         let (result) = try ComPtrs.initialize { resultAbi in
             _ = try perform(as: __x_ABI_C__FIIterable_1___x_ABI_CWindows__CFoundation__CIWwwFormUrlDecoderEntry.self) { pThis in
                 try CHECKED(pThis.pointee.lpVtbl.pointee.First(pThis, &resultAbi))
@@ -258,7 +258,7 @@ fileprivate class __x_ABI_C__FIIterable_1___x_ABI_CWindows__CFoundation__CIWwwFo
     // MARK: WinRT
     /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.iiterable-1.first)
     fileprivate func first() -> WindowsFoundation.AnyIIterator<WindowsFoundation.AnyIWwwFormUrlDecoderEntry?>? {
-        try! _default.First()
+        try! _default.FirstImpl()
     }
 
     public func queryInterface(_ iid: WindowsFoundation.IID) -> IUnknownRef? { nil }
@@ -318,20 +318,13 @@ internal var __x_ABI_C__FIIterator_1___x_ABI_C__FIKeyValuePair_2_HSTRING_IInspec
         return S_OK
     },
 
-    GetMany: {
-        guard let __unwrapped__instance = __x_ABI_C__FIIterator_1___x_ABI_C__FIKeyValuePair_2_HSTRING_IInspectableWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
-        var items: [WindowsFoundation.AnyIKeyValuePair<String, Any?>?] = .from(abiBridge: WindowsFoundation.__x_ABI_C__FIKeyValuePair_2_HSTRING_IInspectableBridge.self, abi: (count: $1, start: $2))
-        let result = __unwrapped__instance.getMany(&items)
-        items.fill(abi: $2, abiBridge: WindowsFoundation.__x_ABI_C__FIKeyValuePair_2_HSTRING_IInspectableBridge.self)
-        $3?.initialize(to: result)
-        return S_OK
-    }
+    GetMany: { _, _, _, _ in return failWith(err: E_NOTIMPL) }
 )
 typealias __x_ABI_C__FIIterator_1___x_ABI_C__FIKeyValuePair_2_HSTRING_IInspectableWrapper = InterfaceWrapperBase<WindowsFoundation.__x_ABI_C__FIIterator_1___x_ABI_C__FIKeyValuePair_2_HSTRING_IInspectableBridge>
-public class IIteratorIKeyValuePairString_Any: WindowsFoundation.IInspectable {
+internal class IIteratorIKeyValuePairString_Any: WindowsFoundation.IInspectable {
     override public class var IID: WindowsFoundation.IID { IID___x_ABI_C__FIIterator_1___x_ABI_C__FIKeyValuePair_2_HSTRING_IInspectable }
 
-    open func get_Current() throws -> WindowsFoundation.AnyIKeyValuePair<String, Any?>? {
+    internal func get_CurrentImpl() throws -> WindowsFoundation.AnyIKeyValuePair<String, Any?>? {
         let (result) = try ComPtrs.initialize { resultAbi in
             _ = try perform(as: __x_ABI_C__FIIterator_1___x_ABI_C__FIKeyValuePair_2_HSTRING_IInspectable.self) { pThis in
                 try CHECKED(pThis.pointee.lpVtbl.pointee.get_Current(pThis, &resultAbi))
@@ -340,7 +333,7 @@ public class IIteratorIKeyValuePairString_Any: WindowsFoundation.IInspectable {
         return WindowsFoundation.__x_ABI_C__FIKeyValuePair_2_HSTRING_IInspectableWrapper.unwrapFrom(abi: result)
     }
 
-    open func get_HasCurrent() throws -> Bool {
+    internal func get_HasCurrentImpl() throws -> Bool {
         var result: boolean = 0
         _ = try perform(as: __x_ABI_C__FIIterator_1___x_ABI_C__FIKeyValuePair_2_HSTRING_IInspectable.self) { pThis in
             try CHECKED(pThis.pointee.lpVtbl.pointee.get_HasCurrent(pThis, &result))
@@ -348,23 +341,12 @@ public class IIteratorIKeyValuePairString_Any: WindowsFoundation.IInspectable {
         return .init(from: result)
     }
 
-    open func MoveNext() throws -> Bool {
+    internal func MoveNextImpl() throws -> Bool {
         var result: boolean = 0
         _ = try perform(as: __x_ABI_C__FIIterator_1___x_ABI_C__FIKeyValuePair_2_HSTRING_IInspectable.self) { pThis in
             try CHECKED(pThis.pointee.lpVtbl.pointee.MoveNext(pThis, &result))
         }
         return .init(from: result)
-    }
-
-    open func GetMany(_ items: inout [WindowsFoundation.AnyIKeyValuePair<String, Any?>?]) throws -> UInt32 {
-        var result: UINT32 = 0
-        try items.toABI(abiBridge: WindowsFoundation.__x_ABI_C__FIKeyValuePair_2_HSTRING_IInspectableBridge.self) { _items in
-            _ = try perform(as: __x_ABI_C__FIIterator_1___x_ABI_C__FIKeyValuePair_2_HSTRING_IInspectable.self) { pThis in
-                try CHECKED(pThis.pointee.lpVtbl.pointee.GetMany(pThis, _items.count, _items.start, &result))
-            }
-        items = .from(abiBridge: WindowsFoundation.__x_ABI_C__FIKeyValuePair_2_HSTRING_IInspectableBridge.self, abi: _items)
-        }
-        return result
     }
 
 }
@@ -395,22 +377,17 @@ fileprivate class __x_ABI_C__FIIterator_1___x_ABI_C__FIKeyValuePair_2_HSTRING_II
     // MARK: WinRT
     /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.iiterator-1.movenext)
     fileprivate func moveNext() -> Bool {
-        try! _default.MoveNext()
-    }
-
-    /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.iiterator-1.getmany)
-    fileprivate func getMany(_ items: inout [WindowsFoundation.AnyIKeyValuePair<String, Any?>?]) -> UInt32 {
-        try! _default.GetMany(&items)
+        try! _default.MoveNextImpl()
     }
 
     /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.iiterator-1.current)
     fileprivate var current : WindowsFoundation.AnyIKeyValuePair<String, Any?>? {
-        get { try! _default.get_Current() }
+        get { try! _default.get_CurrentImpl() }
     }
 
     /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.iiterator-1.hascurrent)
     fileprivate var hasCurrent : Bool {
-        get { try! _default.get_HasCurrent() }
+        get { try! _default.get_HasCurrentImpl() }
     }
 
     public func queryInterface(_ iid: WindowsFoundation.IID) -> IUnknownRef? { nil }
@@ -470,20 +447,13 @@ internal var __x_ABI_C__FIIterator_1___x_ABI_C__FIKeyValuePair_2_HSTRING_HSTRING
         return S_OK
     },
 
-    GetMany: {
-        guard let __unwrapped__instance = __x_ABI_C__FIIterator_1___x_ABI_C__FIKeyValuePair_2_HSTRING_HSTRINGWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
-        var items: [WindowsFoundation.AnyIKeyValuePair<String, String>?] = .from(abiBridge: WindowsFoundation.__x_ABI_C__FIKeyValuePair_2_HSTRING_HSTRINGBridge.self, abi: (count: $1, start: $2))
-        let result = __unwrapped__instance.getMany(&items)
-        items.fill(abi: $2, abiBridge: WindowsFoundation.__x_ABI_C__FIKeyValuePair_2_HSTRING_HSTRINGBridge.self)
-        $3?.initialize(to: result)
-        return S_OK
-    }
+    GetMany: { _, _, _, _ in return failWith(err: E_NOTIMPL) }
 )
 typealias __x_ABI_C__FIIterator_1___x_ABI_C__FIKeyValuePair_2_HSTRING_HSTRINGWrapper = InterfaceWrapperBase<WindowsFoundation.__x_ABI_C__FIIterator_1___x_ABI_C__FIKeyValuePair_2_HSTRING_HSTRINGBridge>
-public class IIteratorIKeyValuePairString_String: WindowsFoundation.IInspectable {
+internal class IIteratorIKeyValuePairString_String: WindowsFoundation.IInspectable {
     override public class var IID: WindowsFoundation.IID { IID___x_ABI_C__FIIterator_1___x_ABI_C__FIKeyValuePair_2_HSTRING_HSTRING }
 
-    open func get_Current() throws -> WindowsFoundation.AnyIKeyValuePair<String, String>? {
+    internal func get_CurrentImpl() throws -> WindowsFoundation.AnyIKeyValuePair<String, String>? {
         let (result) = try ComPtrs.initialize { resultAbi in
             _ = try perform(as: __x_ABI_C__FIIterator_1___x_ABI_C__FIKeyValuePair_2_HSTRING_HSTRING.self) { pThis in
                 try CHECKED(pThis.pointee.lpVtbl.pointee.get_Current(pThis, &resultAbi))
@@ -492,7 +462,7 @@ public class IIteratorIKeyValuePairString_String: WindowsFoundation.IInspectable
         return WindowsFoundation.__x_ABI_C__FIKeyValuePair_2_HSTRING_HSTRINGWrapper.unwrapFrom(abi: result)
     }
 
-    open func get_HasCurrent() throws -> Bool {
+    internal func get_HasCurrentImpl() throws -> Bool {
         var result: boolean = 0
         _ = try perform(as: __x_ABI_C__FIIterator_1___x_ABI_C__FIKeyValuePair_2_HSTRING_HSTRING.self) { pThis in
             try CHECKED(pThis.pointee.lpVtbl.pointee.get_HasCurrent(pThis, &result))
@@ -500,23 +470,12 @@ public class IIteratorIKeyValuePairString_String: WindowsFoundation.IInspectable
         return .init(from: result)
     }
 
-    open func MoveNext() throws -> Bool {
+    internal func MoveNextImpl() throws -> Bool {
         var result: boolean = 0
         _ = try perform(as: __x_ABI_C__FIIterator_1___x_ABI_C__FIKeyValuePair_2_HSTRING_HSTRING.self) { pThis in
             try CHECKED(pThis.pointee.lpVtbl.pointee.MoveNext(pThis, &result))
         }
         return .init(from: result)
-    }
-
-    open func GetMany(_ items: inout [WindowsFoundation.AnyIKeyValuePair<String, String>?]) throws -> UInt32 {
-        var result: UINT32 = 0
-        try items.toABI(abiBridge: WindowsFoundation.__x_ABI_C__FIKeyValuePair_2_HSTRING_HSTRINGBridge.self) { _items in
-            _ = try perform(as: __x_ABI_C__FIIterator_1___x_ABI_C__FIKeyValuePair_2_HSTRING_HSTRING.self) { pThis in
-                try CHECKED(pThis.pointee.lpVtbl.pointee.GetMany(pThis, _items.count, _items.start, &result))
-            }
-        items = .from(abiBridge: WindowsFoundation.__x_ABI_C__FIKeyValuePair_2_HSTRING_HSTRINGBridge.self, abi: _items)
-        }
-        return result
     }
 
 }
@@ -547,22 +506,17 @@ fileprivate class __x_ABI_C__FIIterator_1___x_ABI_C__FIKeyValuePair_2_HSTRING_HS
     // MARK: WinRT
     /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.iiterator-1.movenext)
     fileprivate func moveNext() -> Bool {
-        try! _default.MoveNext()
-    }
-
-    /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.iiterator-1.getmany)
-    fileprivate func getMany(_ items: inout [WindowsFoundation.AnyIKeyValuePair<String, String>?]) -> UInt32 {
-        try! _default.GetMany(&items)
+        try! _default.MoveNextImpl()
     }
 
     /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.iiterator-1.current)
     fileprivate var current : WindowsFoundation.AnyIKeyValuePair<String, String>? {
-        get { try! _default.get_Current() }
+        get { try! _default.get_CurrentImpl() }
     }
 
     /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.iiterator-1.hascurrent)
     fileprivate var hasCurrent : Bool {
-        get { try! _default.get_HasCurrent() }
+        get { try! _default.get_HasCurrentImpl() }
     }
 
     public func queryInterface(_ iid: WindowsFoundation.IID) -> IUnknownRef? { nil }
@@ -622,20 +576,13 @@ internal var __x_ABI_C__FIIterator_1___x_ABI_CWindows__CFoundation__CIWwwFormUrl
         return S_OK
     },
 
-    GetMany: {
-        guard let __unwrapped__instance = __x_ABI_C__FIIterator_1___x_ABI_CWindows__CFoundation__CIWwwFormUrlDecoderEntryWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
-        var items: [WindowsFoundation.AnyIWwwFormUrlDecoderEntry?] = .from(abiBridge: __IMPL_Windows_Foundation.IWwwFormUrlDecoderEntryBridge.self, abi: (count: $1, start: $2))
-        let result = __unwrapped__instance.getMany(&items)
-        items.fill(abi: $2, abiBridge: __IMPL_Windows_Foundation.IWwwFormUrlDecoderEntryBridge.self)
-        $3?.initialize(to: result)
-        return S_OK
-    }
+    GetMany: { _, _, _, _ in return failWith(err: E_NOTIMPL) }
 )
 typealias __x_ABI_C__FIIterator_1___x_ABI_CWindows__CFoundation__CIWwwFormUrlDecoderEntryWrapper = InterfaceWrapperBase<WindowsFoundation.__x_ABI_C__FIIterator_1___x_ABI_CWindows__CFoundation__CIWwwFormUrlDecoderEntryBridge>
-public class IIteratorIWwwFormUrlDecoderEntry: WindowsFoundation.IInspectable {
+internal class IIteratorIWwwFormUrlDecoderEntry: WindowsFoundation.IInspectable {
     override public class var IID: WindowsFoundation.IID { IID___x_ABI_C__FIIterator_1___x_ABI_CWindows__CFoundation__CIWwwFormUrlDecoderEntry }
 
-    open func get_Current() throws -> WindowsFoundation.AnyIWwwFormUrlDecoderEntry? {
+    internal func get_CurrentImpl() throws -> WindowsFoundation.AnyIWwwFormUrlDecoderEntry? {
         let (result) = try ComPtrs.initialize { resultAbi in
             _ = try perform(as: __x_ABI_C__FIIterator_1___x_ABI_CWindows__CFoundation__CIWwwFormUrlDecoderEntry.self) { pThis in
                 try CHECKED(pThis.pointee.lpVtbl.pointee.get_Current(pThis, &resultAbi))
@@ -644,7 +591,7 @@ public class IIteratorIWwwFormUrlDecoderEntry: WindowsFoundation.IInspectable {
         return __ABI_Windows_Foundation.IWwwFormUrlDecoderEntryWrapper.unwrapFrom(abi: result)
     }
 
-    open func get_HasCurrent() throws -> Bool {
+    internal func get_HasCurrentImpl() throws -> Bool {
         var result: boolean = 0
         _ = try perform(as: __x_ABI_C__FIIterator_1___x_ABI_CWindows__CFoundation__CIWwwFormUrlDecoderEntry.self) { pThis in
             try CHECKED(pThis.pointee.lpVtbl.pointee.get_HasCurrent(pThis, &result))
@@ -652,23 +599,12 @@ public class IIteratorIWwwFormUrlDecoderEntry: WindowsFoundation.IInspectable {
         return .init(from: result)
     }
 
-    open func MoveNext() throws -> Bool {
+    internal func MoveNextImpl() throws -> Bool {
         var result: boolean = 0
         _ = try perform(as: __x_ABI_C__FIIterator_1___x_ABI_CWindows__CFoundation__CIWwwFormUrlDecoderEntry.self) { pThis in
             try CHECKED(pThis.pointee.lpVtbl.pointee.MoveNext(pThis, &result))
         }
         return .init(from: result)
-    }
-
-    open func GetMany(_ items: inout [WindowsFoundation.AnyIWwwFormUrlDecoderEntry?]) throws -> UInt32 {
-        var result: UINT32 = 0
-        try items.toABI(abiBridge: __IMPL_Windows_Foundation.IWwwFormUrlDecoderEntryBridge.self) { _items in
-            _ = try perform(as: __x_ABI_C__FIIterator_1___x_ABI_CWindows__CFoundation__CIWwwFormUrlDecoderEntry.self) { pThis in
-                try CHECKED(pThis.pointee.lpVtbl.pointee.GetMany(pThis, _items.count, _items.start, &result))
-            }
-        items = .from(abiBridge: __IMPL_Windows_Foundation.IWwwFormUrlDecoderEntryBridge.self, abi: _items)
-        }
-        return result
     }
 
 }
@@ -699,22 +635,17 @@ fileprivate class __x_ABI_C__FIIterator_1___x_ABI_CWindows__CFoundation__CIWwwFo
     // MARK: WinRT
     /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.iiterator-1.movenext)
     fileprivate func moveNext() -> Bool {
-        try! _default.MoveNext()
-    }
-
-    /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.iiterator-1.getmany)
-    fileprivate func getMany(_ items: inout [WindowsFoundation.AnyIWwwFormUrlDecoderEntry?]) -> UInt32 {
-        try! _default.GetMany(&items)
+        try! _default.MoveNextImpl()
     }
 
     /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.iiterator-1.current)
     fileprivate var current : WindowsFoundation.AnyIWwwFormUrlDecoderEntry? {
-        get { try! _default.get_Current() }
+        get { try! _default.get_CurrentImpl() }
     }
 
     /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.iiterator-1.hascurrent)
     fileprivate var hasCurrent : Bool {
-        get { try! _default.get_HasCurrent() }
+        get { try! _default.get_HasCurrentImpl() }
     }
 
     public func queryInterface(_ iid: WindowsFoundation.IID) -> IUnknownRef? { nil }
@@ -768,10 +699,10 @@ internal var __x_ABI_C__FIKeyValuePair_2_HSTRING_IInspectableVTable: __x_ABI_C__
     }
 )
 typealias __x_ABI_C__FIKeyValuePair_2_HSTRING_IInspectableWrapper = InterfaceWrapperBase<WindowsFoundation.__x_ABI_C__FIKeyValuePair_2_HSTRING_IInspectableBridge>
-public class IKeyValuePairString_Any: WindowsFoundation.IInspectable {
+internal class IKeyValuePairString_Any: WindowsFoundation.IInspectable {
     override public class var IID: WindowsFoundation.IID { IID___x_ABI_C__FIKeyValuePair_2_HSTRING_IInspectable }
 
-    open func get_Key() throws -> String {
+    internal func get_KeyImpl() throws -> String {
         var result: HSTRING?
         _ = try perform(as: __x_ABI_C__FIKeyValuePair_2_HSTRING_IInspectable.self) { pThis in
             try CHECKED(pThis.pointee.lpVtbl.pointee.get_Key(pThis, &result))
@@ -779,7 +710,7 @@ public class IKeyValuePairString_Any: WindowsFoundation.IInspectable {
         return .init(from: result)
     }
 
-    open func get_Value() throws -> Any? {
+    internal func get_ValueImpl() throws -> Any? {
         let (result) = try ComPtrs.initialize { resultAbi in
             _ = try perform(as: __x_ABI_C__FIKeyValuePair_2_HSTRING_IInspectable.self) { pThis in
                 try CHECKED(pThis.pointee.lpVtbl.pointee.get_Value(pThis, &resultAbi))
@@ -817,12 +748,12 @@ fileprivate class __x_ABI_C__FIKeyValuePair_2_HSTRING_IInspectableImpl : IKeyVal
     // MARK: WinRT
     /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.ikeyvaluepair-2.key)
     fileprivate var key : String {
-        get { try! _default.get_Key() }
+        get { try! _default.get_KeyImpl() }
     }
 
     /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.ikeyvaluepair-2.value)
     fileprivate var value : Any? {
-        get { try! _default.get_Value() }
+        get { try! _default.get_ValueImpl() }
     }
 
     public func queryInterface(_ iid: WindowsFoundation.IID) -> IUnknownRef? { nil }
@@ -875,10 +806,10 @@ internal var __x_ABI_C__FIKeyValuePair_2_HSTRING_HSTRINGVTable: __x_ABI_C__FIKey
     }
 )
 typealias __x_ABI_C__FIKeyValuePair_2_HSTRING_HSTRINGWrapper = InterfaceWrapperBase<WindowsFoundation.__x_ABI_C__FIKeyValuePair_2_HSTRING_HSTRINGBridge>
-public class IKeyValuePairString_String: WindowsFoundation.IInspectable {
+internal class IKeyValuePairString_String: WindowsFoundation.IInspectable {
     override public class var IID: WindowsFoundation.IID { IID___x_ABI_C__FIKeyValuePair_2_HSTRING_HSTRING }
 
-    open func get_Key() throws -> String {
+    internal func get_KeyImpl() throws -> String {
         var result: HSTRING?
         _ = try perform(as: __x_ABI_C__FIKeyValuePair_2_HSTRING_HSTRING.self) { pThis in
             try CHECKED(pThis.pointee.lpVtbl.pointee.get_Key(pThis, &result))
@@ -886,7 +817,7 @@ public class IKeyValuePairString_String: WindowsFoundation.IInspectable {
         return .init(from: result)
     }
 
-    open func get_Value() throws -> String {
+    internal func get_ValueImpl() throws -> String {
         var result: HSTRING?
         _ = try perform(as: __x_ABI_C__FIKeyValuePair_2_HSTRING_HSTRING.self) { pThis in
             try CHECKED(pThis.pointee.lpVtbl.pointee.get_Value(pThis, &result))
@@ -923,12 +854,12 @@ fileprivate class __x_ABI_C__FIKeyValuePair_2_HSTRING_HSTRINGImpl : IKeyValuePai
     // MARK: WinRT
     /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.ikeyvaluepair-2.key)
     fileprivate var key : String {
-        get { try! _default.get_Key() }
+        get { try! _default.get_KeyImpl() }
     }
 
     /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.ikeyvaluepair-2.value)
     fileprivate var value : String {
-        get { try! _default.get_Value() }
+        get { try! _default.get_ValueImpl() }
     }
 
     public func queryInterface(_ iid: WindowsFoundation.IID) -> IUnknownRef? { nil }
@@ -981,10 +912,10 @@ internal var __x_ABI_C__FIMapChangedEventArgs_1_HSTRINGVTable: __x_ABI_C__FIMapC
     }
 )
 typealias __x_ABI_C__FIMapChangedEventArgs_1_HSTRINGWrapper = InterfaceWrapperBase<WindowsFoundation.__x_ABI_C__FIMapChangedEventArgs_1_HSTRINGBridge>
-public class IMapChangedEventArgsString: WindowsFoundation.IInspectable {
+internal class IMapChangedEventArgsString: WindowsFoundation.IInspectable {
     override public class var IID: WindowsFoundation.IID { IID___x_ABI_C__FIMapChangedEventArgs_1_HSTRING }
 
-    open func get_CollectionChange() throws -> WindowsFoundation.CollectionChange {
+    internal func get_CollectionChangeImpl() throws -> WindowsFoundation.CollectionChange {
         var result: __x_ABI_CWindows_CFoundation_CCollections_CCollectionChange = .init(0)
         _ = try perform(as: __x_ABI_C__FIMapChangedEventArgs_1_HSTRING.self) { pThis in
             try CHECKED(pThis.pointee.lpVtbl.pointee.get_CollectionChange(pThis, &result))
@@ -992,7 +923,7 @@ public class IMapChangedEventArgsString: WindowsFoundation.IInspectable {
         return result
     }
 
-    open func get_Key() throws -> String {
+    internal func get_KeyImpl() throws -> String {
         var result: HSTRING?
         _ = try perform(as: __x_ABI_C__FIMapChangedEventArgs_1_HSTRING.self) { pThis in
             try CHECKED(pThis.pointee.lpVtbl.pointee.get_Key(pThis, &result))
@@ -1028,12 +959,12 @@ fileprivate class __x_ABI_C__FIMapChangedEventArgs_1_HSTRINGImpl : IMapChangedEv
     // MARK: WinRT
     /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.imapchangedeventargs-1.collectionchange)
     fileprivate var collectionChange : WindowsFoundation.CollectionChange {
-        get { try! _default.get_CollectionChange() }
+        get { try! _default.get_CollectionChangeImpl() }
     }
 
     /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.imapchangedeventargs-1.key)
     fileprivate var key : String {
-        get { try! _default.get_Key() }
+        get { try! _default.get_KeyImpl() }
     }
 
     public func queryInterface(_ iid: WindowsFoundation.IID) -> IUnknownRef? { nil }
@@ -1109,10 +1040,10 @@ internal var __x_ABI_C__FIMapView_2_HSTRING_IInspectableVTable: __x_ABI_C__FIMap
     }
 )
 typealias __x_ABI_C__FIMapView_2_HSTRING_IInspectableWrapper = InterfaceWrapperBase<WindowsFoundation.__x_ABI_C__FIMapView_2_HSTRING_IInspectableBridge>
-public class IMapViewString_Any: WindowsFoundation.IInspectable {
+internal class IMapViewString_Any: WindowsFoundation.IInspectable {
     override public class var IID: WindowsFoundation.IID { IID___x_ABI_C__FIMapView_2_HSTRING_IInspectable }
 
-    open func Lookup(_ key: String) throws -> Any? {
+    internal func LookupImpl(_ key: String) throws -> Any? {
         let (result) = try ComPtrs.initialize { resultAbi in
             let _key = try! HString(key)
             _ = try perform(as: __x_ABI_C__FIMapView_2_HSTRING_IInspectable.self) { pThis in
@@ -1122,7 +1053,7 @@ public class IMapViewString_Any: WindowsFoundation.IInspectable {
         return __ABI_.AnyWrapper.unwrapFrom(abi: result)
     }
 
-    open func get_Size() throws -> UInt32 {
+    internal func get_SizeImpl() throws -> UInt32 {
         var result: UINT32 = 0
         _ = try perform(as: __x_ABI_C__FIMapView_2_HSTRING_IInspectable.self) { pThis in
             try CHECKED(pThis.pointee.lpVtbl.pointee.get_Size(pThis, &result))
@@ -1130,7 +1061,7 @@ public class IMapViewString_Any: WindowsFoundation.IInspectable {
         return result
     }
 
-    open func HasKey(_ key: String) throws -> Bool {
+    internal func HasKeyImpl(_ key: String) throws -> Bool {
         var result: boolean = 0
         let _key = try! HString(key)
         _ = try perform(as: __x_ABI_C__FIMapView_2_HSTRING_IInspectable.self) { pThis in
@@ -1139,7 +1070,7 @@ public class IMapViewString_Any: WindowsFoundation.IInspectable {
         return .init(from: result)
     }
 
-    open func Split(_ first: inout WindowsFoundation.AnyIMapView<String, Any?>?, _ second: inout WindowsFoundation.AnyIMapView<String, Any?>?) throws {
+    internal func SplitImpl(_ first: inout WindowsFoundation.AnyIMapView<String, Any?>?, _ second: inout WindowsFoundation.AnyIMapView<String, Any?>?) throws {
         let (_first, _second) = try ComPtrs.initialize { (_firstAbi, _secondAbi) in
             _ = try perform(as: __x_ABI_C__FIMapView_2_HSTRING_IInspectable.self) { pThis in
                 try CHECKED(pThis.pointee.lpVtbl.pointee.Split(pThis, &_firstAbi, &_secondAbi))
@@ -1179,28 +1110,28 @@ fileprivate class __x_ABI_C__FIMapView_2_HSTRING_IInspectableImpl : IMapView, Ab
     // MARK: WinRT
     /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.imapview-2.lookup)
     fileprivate func lookup(_ key: String) -> Any? {
-        try! _default.Lookup(key)
+        try! _default.LookupImpl(key)
     }
 
     /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.imapview-2.haskey)
     fileprivate func hasKey(_ key: String) -> Bool {
-        try! _default.HasKey(key)
+        try! _default.HasKeyImpl(key)
     }
 
     /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.imapview-2.split)
     fileprivate func split(_ first: inout WindowsFoundation.AnyIMapView<String, Any?>?, _ second: inout WindowsFoundation.AnyIMapView<String, Any?>?) {
-        try! _default.Split(&first, &second)
+        try! _default.SplitImpl(&first, &second)
     }
 
     /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.imapview-2.size)
     fileprivate var size : UInt32 {
-        get { try! _default.get_Size() }
+        get { try! _default.get_SizeImpl() }
     }
 
     private lazy var _IIterable: IIterableIKeyValuePairString_Any! = getInterfaceForCaching()
     /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.imapview-2.first)
     fileprivate func first() -> WindowsFoundation.AnyIIterator<WindowsFoundation.AnyIKeyValuePair<String, Any?>?>? {
-        try! _IIterable.First()
+        try! _IIterable.FirstImpl()
     }
 
     public func queryInterface(_ iid: WindowsFoundation.IID) -> IUnknownRef? { nil }
@@ -1275,10 +1206,10 @@ internal var __x_ABI_C__FIMapView_2_HSTRING_HSTRINGVTable: __x_ABI_C__FIMapView_
     }
 )
 typealias __x_ABI_C__FIMapView_2_HSTRING_HSTRINGWrapper = InterfaceWrapperBase<WindowsFoundation.__x_ABI_C__FIMapView_2_HSTRING_HSTRINGBridge>
-public class IMapViewString_String: WindowsFoundation.IInspectable {
+internal class IMapViewString_String: WindowsFoundation.IInspectable {
     override public class var IID: WindowsFoundation.IID { IID___x_ABI_C__FIMapView_2_HSTRING_HSTRING }
 
-    open func Lookup(_ key: String) throws -> String {
+    internal func LookupImpl(_ key: String) throws -> String {
         var result: HSTRING?
         let _key = try! HString(key)
         _ = try perform(as: __x_ABI_C__FIMapView_2_HSTRING_HSTRING.self) { pThis in
@@ -1287,7 +1218,7 @@ public class IMapViewString_String: WindowsFoundation.IInspectable {
         return .init(from: result)
     }
 
-    open func get_Size() throws -> UInt32 {
+    internal func get_SizeImpl() throws -> UInt32 {
         var result: UINT32 = 0
         _ = try perform(as: __x_ABI_C__FIMapView_2_HSTRING_HSTRING.self) { pThis in
             try CHECKED(pThis.pointee.lpVtbl.pointee.get_Size(pThis, &result))
@@ -1295,7 +1226,7 @@ public class IMapViewString_String: WindowsFoundation.IInspectable {
         return result
     }
 
-    open func HasKey(_ key: String) throws -> Bool {
+    internal func HasKeyImpl(_ key: String) throws -> Bool {
         var result: boolean = 0
         let _key = try! HString(key)
         _ = try perform(as: __x_ABI_C__FIMapView_2_HSTRING_HSTRING.self) { pThis in
@@ -1304,7 +1235,7 @@ public class IMapViewString_String: WindowsFoundation.IInspectable {
         return .init(from: result)
     }
 
-    open func Split(_ first: inout WindowsFoundation.AnyIMapView<String, String>?, _ second: inout WindowsFoundation.AnyIMapView<String, String>?) throws {
+    internal func SplitImpl(_ first: inout WindowsFoundation.AnyIMapView<String, String>?, _ second: inout WindowsFoundation.AnyIMapView<String, String>?) throws {
         let (_first, _second) = try ComPtrs.initialize { (_firstAbi, _secondAbi) in
             _ = try perform(as: __x_ABI_C__FIMapView_2_HSTRING_HSTRING.self) { pThis in
                 try CHECKED(pThis.pointee.lpVtbl.pointee.Split(pThis, &_firstAbi, &_secondAbi))
@@ -1344,28 +1275,28 @@ fileprivate class __x_ABI_C__FIMapView_2_HSTRING_HSTRINGImpl : IMapView, AbiInte
     // MARK: WinRT
     /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.imapview-2.lookup)
     fileprivate func lookup(_ key: String) -> String {
-        try! _default.Lookup(key)
+        try! _default.LookupImpl(key)
     }
 
     /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.imapview-2.haskey)
     fileprivate func hasKey(_ key: String) -> Bool {
-        try! _default.HasKey(key)
+        try! _default.HasKeyImpl(key)
     }
 
     /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.imapview-2.split)
     fileprivate func split(_ first: inout WindowsFoundation.AnyIMapView<String, String>?, _ second: inout WindowsFoundation.AnyIMapView<String, String>?) {
-        try! _default.Split(&first, &second)
+        try! _default.SplitImpl(&first, &second)
     }
 
     /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.imapview-2.size)
     fileprivate var size : UInt32 {
-        get { try! _default.get_Size() }
+        get { try! _default.get_SizeImpl() }
     }
 
     private lazy var _IIterable: IIterableIKeyValuePairString_String! = getInterfaceForCaching()
     /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.imapview-2.first)
     fileprivate func first() -> WindowsFoundation.AnyIIterator<WindowsFoundation.AnyIKeyValuePair<String, String>?>? {
-        try! _IIterable.First()
+        try! _IIterable.FirstImpl()
     }
 
     public func queryInterface(_ iid: WindowsFoundation.IID) -> IUnknownRef? { nil }
@@ -1459,10 +1390,10 @@ internal var __x_ABI_C__FIMap_2_HSTRING_IInspectableVTable: __x_ABI_C__FIMap_2_H
     }
 )
 typealias __x_ABI_C__FIMap_2_HSTRING_IInspectableWrapper = InterfaceWrapperBase<WindowsFoundation.__x_ABI_C__FIMap_2_HSTRING_IInspectableBridge>
-public class IMapString_Any: WindowsFoundation.IInspectable {
+internal class IMapString_Any: WindowsFoundation.IInspectable {
     override public class var IID: WindowsFoundation.IID { IID___x_ABI_C__FIMap_2_HSTRING_IInspectable }
 
-    open func Lookup(_ key: String) throws -> Any? {
+    internal func LookupImpl(_ key: String) throws -> Any? {
         let (result) = try ComPtrs.initialize { resultAbi in
             let _key = try! HString(key)
             _ = try perform(as: __x_ABI_C__FIMap_2_HSTRING_IInspectable.self) { pThis in
@@ -1472,7 +1403,7 @@ public class IMapString_Any: WindowsFoundation.IInspectable {
         return __ABI_.AnyWrapper.unwrapFrom(abi: result)
     }
 
-    open func get_Size() throws -> UInt32 {
+    internal func get_SizeImpl() throws -> UInt32 {
         var result: UINT32 = 0
         _ = try perform(as: __x_ABI_C__FIMap_2_HSTRING_IInspectable.self) { pThis in
             try CHECKED(pThis.pointee.lpVtbl.pointee.get_Size(pThis, &result))
@@ -1480,7 +1411,7 @@ public class IMapString_Any: WindowsFoundation.IInspectable {
         return result
     }
 
-    open func HasKey(_ key: String) throws -> Bool {
+    internal func HasKeyImpl(_ key: String) throws -> Bool {
         var result: boolean = 0
         let _key = try! HString(key)
         _ = try perform(as: __x_ABI_C__FIMap_2_HSTRING_IInspectable.self) { pThis in
@@ -1489,7 +1420,7 @@ public class IMapString_Any: WindowsFoundation.IInspectable {
         return .init(from: result)
     }
 
-    open func GetView() throws -> WindowsFoundation.AnyIMapView<String, Any?>? {
+    internal func GetViewImpl() throws -> WindowsFoundation.AnyIMapView<String, Any?>? {
         let (result) = try ComPtrs.initialize { resultAbi in
             _ = try perform(as: __x_ABI_C__FIMap_2_HSTRING_IInspectable.self) { pThis in
                 try CHECKED(pThis.pointee.lpVtbl.pointee.GetView(pThis, &resultAbi))
@@ -1498,7 +1429,7 @@ public class IMapString_Any: WindowsFoundation.IInspectable {
         return WindowsFoundation.__x_ABI_C__FIMapView_2_HSTRING_IInspectableWrapper.unwrapFrom(abi: result)
     }
 
-    open func Insert(_ key: String, _ value: Any?) throws -> Bool {
+    internal func InsertImpl(_ key: String, _ value: Any?) throws -> Bool {
         var result: boolean = 0
         let _key = try! HString(key)
         let valueWrapper = __ABI_.AnyWrapper(value)
@@ -1509,14 +1440,14 @@ public class IMapString_Any: WindowsFoundation.IInspectable {
         return .init(from: result)
     }
 
-    open func Remove(_ key: String) throws {
+    internal func RemoveImpl(_ key: String) throws {
         let _key = try! HString(key)
         _ = try perform(as: __x_ABI_C__FIMap_2_HSTRING_IInspectable.self) { pThis in
             try CHECKED(pThis.pointee.lpVtbl.pointee.Remove(pThis, _key.get()))
         }
     }
 
-    open func Clear() throws {
+    internal func ClearImpl() throws {
         _ = try perform(as: __x_ABI_C__FIMap_2_HSTRING_IInspectable.self) { pThis in
             try CHECKED(pThis.pointee.lpVtbl.pointee.Clear(pThis))
         }
@@ -1552,43 +1483,43 @@ fileprivate class __x_ABI_C__FIMap_2_HSTRING_IInspectableImpl : IMap, AbiInterfa
     // MARK: WinRT
     /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.imap-2.lookup)
     fileprivate func lookup(_ key: String) -> Any? {
-        try! _default.Lookup(key)
+        try! _default.LookupImpl(key)
     }
 
     /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.imap-2.haskey)
     fileprivate func hasKey(_ key: String) -> Bool {
-        try! _default.HasKey(key)
+        try! _default.HasKeyImpl(key)
     }
 
     /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.imap-2.getview)
     fileprivate func getView() -> WindowsFoundation.AnyIMapView<String, Any?>? {
-        try! _default.GetView()
+        try! _default.GetViewImpl()
     }
 
     /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.imap-2.insert)
     fileprivate func insert(_ key: String, _ value: Any?) -> Bool {
-        try! _default.Insert(key, value)
+        try! _default.InsertImpl(key, value)
     }
 
     /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.imap-2.remove)
     fileprivate func remove(_ key: String) {
-        try! _default.Remove(key)
+        try! _default.RemoveImpl(key)
     }
 
     /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.imap-2.clear)
     fileprivate func clear() {
-        try! _default.Clear()
+        try! _default.ClearImpl()
     }
 
     /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.imap-2.size)
     fileprivate var size : UInt32 {
-        get { try! _default.get_Size() }
+        get { try! _default.get_SizeImpl() }
     }
 
     private lazy var _IIterable: IIterableIKeyValuePairString_Any! = getInterfaceForCaching()
     /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.imap-2.first)
     fileprivate func first() -> WindowsFoundation.AnyIIterator<WindowsFoundation.AnyIKeyValuePair<String, Any?>?>? {
-        try! _IIterable.First()
+        try! _IIterable.FirstImpl()
     }
 
     public func queryInterface(_ iid: WindowsFoundation.IID) -> IUnknownRef? { nil }
@@ -1681,10 +1612,10 @@ internal var __x_ABI_C__FIMap_2_HSTRING_HSTRINGVTable: __x_ABI_C__FIMap_2_HSTRIN
     }
 )
 typealias __x_ABI_C__FIMap_2_HSTRING_HSTRINGWrapper = InterfaceWrapperBase<WindowsFoundation.__x_ABI_C__FIMap_2_HSTRING_HSTRINGBridge>
-public class IMapString_String: WindowsFoundation.IInspectable {
+internal class IMapString_String: WindowsFoundation.IInspectable {
     override public class var IID: WindowsFoundation.IID { IID___x_ABI_C__FIMap_2_HSTRING_HSTRING }
 
-    open func Lookup(_ key: String) throws -> String {
+    internal func LookupImpl(_ key: String) throws -> String {
         var result: HSTRING?
         let _key = try! HString(key)
         _ = try perform(as: __x_ABI_C__FIMap_2_HSTRING_HSTRING.self) { pThis in
@@ -1693,7 +1624,7 @@ public class IMapString_String: WindowsFoundation.IInspectable {
         return .init(from: result)
     }
 
-    open func get_Size() throws -> UInt32 {
+    internal func get_SizeImpl() throws -> UInt32 {
         var result: UINT32 = 0
         _ = try perform(as: __x_ABI_C__FIMap_2_HSTRING_HSTRING.self) { pThis in
             try CHECKED(pThis.pointee.lpVtbl.pointee.get_Size(pThis, &result))
@@ -1701,7 +1632,7 @@ public class IMapString_String: WindowsFoundation.IInspectable {
         return result
     }
 
-    open func HasKey(_ key: String) throws -> Bool {
+    internal func HasKeyImpl(_ key: String) throws -> Bool {
         var result: boolean = 0
         let _key = try! HString(key)
         _ = try perform(as: __x_ABI_C__FIMap_2_HSTRING_HSTRING.self) { pThis in
@@ -1710,7 +1641,7 @@ public class IMapString_String: WindowsFoundation.IInspectable {
         return .init(from: result)
     }
 
-    open func GetView() throws -> WindowsFoundation.AnyIMapView<String, String>? {
+    internal func GetViewImpl() throws -> WindowsFoundation.AnyIMapView<String, String>? {
         let (result) = try ComPtrs.initialize { resultAbi in
             _ = try perform(as: __x_ABI_C__FIMap_2_HSTRING_HSTRING.self) { pThis in
                 try CHECKED(pThis.pointee.lpVtbl.pointee.GetView(pThis, &resultAbi))
@@ -1719,7 +1650,7 @@ public class IMapString_String: WindowsFoundation.IInspectable {
         return WindowsFoundation.__x_ABI_C__FIMapView_2_HSTRING_HSTRINGWrapper.unwrapFrom(abi: result)
     }
 
-    open func Insert(_ key: String, _ value: String) throws -> Bool {
+    internal func InsertImpl(_ key: String, _ value: String) throws -> Bool {
         var result: boolean = 0
         let _key = try! HString(key)
         let _value = try! HString(value)
@@ -1729,14 +1660,14 @@ public class IMapString_String: WindowsFoundation.IInspectable {
         return .init(from: result)
     }
 
-    open func Remove(_ key: String) throws {
+    internal func RemoveImpl(_ key: String) throws {
         let _key = try! HString(key)
         _ = try perform(as: __x_ABI_C__FIMap_2_HSTRING_HSTRING.self) { pThis in
             try CHECKED(pThis.pointee.lpVtbl.pointee.Remove(pThis, _key.get()))
         }
     }
 
-    open func Clear() throws {
+    internal func ClearImpl() throws {
         _ = try perform(as: __x_ABI_C__FIMap_2_HSTRING_HSTRING.self) { pThis in
             try CHECKED(pThis.pointee.lpVtbl.pointee.Clear(pThis))
         }
@@ -1772,43 +1703,43 @@ fileprivate class __x_ABI_C__FIMap_2_HSTRING_HSTRINGImpl : IMap, AbiInterfaceImp
     // MARK: WinRT
     /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.imap-2.lookup)
     fileprivate func lookup(_ key: String) -> String {
-        try! _default.Lookup(key)
+        try! _default.LookupImpl(key)
     }
 
     /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.imap-2.haskey)
     fileprivate func hasKey(_ key: String) -> Bool {
-        try! _default.HasKey(key)
+        try! _default.HasKeyImpl(key)
     }
 
     /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.imap-2.getview)
     fileprivate func getView() -> WindowsFoundation.AnyIMapView<String, String>? {
-        try! _default.GetView()
+        try! _default.GetViewImpl()
     }
 
     /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.imap-2.insert)
     fileprivate func insert(_ key: String, _ value: String) -> Bool {
-        try! _default.Insert(key, value)
+        try! _default.InsertImpl(key, value)
     }
 
     /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.imap-2.remove)
     fileprivate func remove(_ key: String) {
-        try! _default.Remove(key)
+        try! _default.RemoveImpl(key)
     }
 
     /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.imap-2.clear)
     fileprivate func clear() {
-        try! _default.Clear()
+        try! _default.ClearImpl()
     }
 
     /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.imap-2.size)
     fileprivate var size : UInt32 {
-        get { try! _default.get_Size() }
+        get { try! _default.get_SizeImpl() }
     }
 
     private lazy var _IIterable: IIterableIKeyValuePairString_String! = getInterfaceForCaching()
     /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.imap-2.first)
     fileprivate func first() -> WindowsFoundation.AnyIIterator<WindowsFoundation.AnyIKeyValuePair<String, String>?>? {
-        try! _IIterable.First()
+        try! _IIterable.FirstImpl()
     }
 
     public func queryInterface(_ iid: WindowsFoundation.IID) -> IUnknownRef? { nil }
@@ -1864,10 +1795,10 @@ internal var __x_ABI_C__FIObservableMap_2_HSTRING_IInspectableVTable: __x_ABI_C_
     }
 )
 typealias __x_ABI_C__FIObservableMap_2_HSTRING_IInspectableWrapper = InterfaceWrapperBase<WindowsFoundation.__x_ABI_C__FIObservableMap_2_HSTRING_IInspectableBridge>
-public class IObservableMapString_Any: WindowsFoundation.IInspectable {
+internal class IObservableMapString_Any: WindowsFoundation.IInspectable {
     override public class var IID: WindowsFoundation.IID { IID___x_ABI_C__FIObservableMap_2_HSTRING_IInspectable }
 
-    open func add_MapChanged(_ vhnd: MapChangedEventHandler<String, Any?>?) throws -> EventRegistrationToken {
+    internal func add_MapChangedImpl(_ vhnd: MapChangedEventHandler<String, Any?>?) throws -> EventRegistrationToken {
         var result: EventRegistrationToken = .init()
         let vhndWrapper = WindowsFoundation.__x_ABI_C__FMapChangedEventHandler_2_HSTRING_IInspectableWrapper(vhnd)
         let _vhnd = try! vhndWrapper?.toABI { $0 }
@@ -1877,7 +1808,7 @@ public class IObservableMapString_Any: WindowsFoundation.IInspectable {
         return result
     }
 
-    open func remove_MapChanged(_ token: EventRegistrationToken) throws {
+    internal func remove_MapChangedImpl(_ token: EventRegistrationToken) throws {
         _ = try perform(as: __x_ABI_C__FIObservableMap_2_HSTRING_IInspectable.self) { pThis in
             try CHECKED(pThis.pointee.lpVtbl.pointee.remove_MapChanged(pThis, token))
         }
@@ -1916,10 +1847,10 @@ fileprivate class __x_ABI_C__FIObservableMap_2_HSTRING_IInspectableImpl : IObser
       .init(
         add: { [weak self] in
           guard let this = self?._default else { return .init() }
-          return try! this.add_MapChanged($0)
+          return try! this.add_MapChangedImpl($0)
         },
         remove: { [weak self] in
-         try? self?._default.remove_MapChanged($0)
+         try? self?._default.remove_MapChangedImpl($0)
        }
       )
     }()
@@ -1927,43 +1858,43 @@ fileprivate class __x_ABI_C__FIObservableMap_2_HSTRING_IInspectableImpl : IObser
     private lazy var _IMap: IMapString_Any! = getInterfaceForCaching()
     /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.iobservablemap-2.lookup)
     fileprivate func lookup(_ key: String) -> Any? {
-        try! _IMap.Lookup(key)
+        try! _IMap.LookupImpl(key)
     }
 
     /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.iobservablemap-2.haskey)
     fileprivate func hasKey(_ key: String) -> Bool {
-        try! _IMap.HasKey(key)
+        try! _IMap.HasKeyImpl(key)
     }
 
     /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.iobservablemap-2.getview)
     fileprivate func getView() -> WindowsFoundation.AnyIMapView<String, Any?>? {
-        try! _IMap.GetView()
+        try! _IMap.GetViewImpl()
     }
 
     /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.iobservablemap-2.insert)
     fileprivate func insert(_ key: String, _ value: Any?) -> Bool {
-        try! _IMap.Insert(key, value)
+        try! _IMap.InsertImpl(key, value)
     }
 
     /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.iobservablemap-2.remove)
     fileprivate func remove(_ key: String) {
-        try! _IMap.Remove(key)
+        try! _IMap.RemoveImpl(key)
     }
 
     /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.iobservablemap-2.clear)
     fileprivate func clear() {
-        try! _IMap.Clear()
+        try! _IMap.ClearImpl()
     }
 
     /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.iobservablemap-2.size)
     fileprivate var size : UInt32 {
-        get { try! _IMap.get_Size() }
+        get { try! _IMap.get_SizeImpl() }
     }
 
     private lazy var _IIterable: IIterableIKeyValuePairString_Any! = getInterfaceForCaching()
     /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.iobservablemap-2.first)
     fileprivate func first() -> WindowsFoundation.AnyIIterator<WindowsFoundation.AnyIKeyValuePair<String, Any?>?>? {
-        try! _IIterable.First()
+        try! _IIterable.FirstImpl()
     }
 
     public func queryInterface(_ iid: WindowsFoundation.IID) -> IUnknownRef? { nil }
@@ -2019,10 +1950,10 @@ internal var __x_ABI_C__FIObservableMap_2_HSTRING_HSTRINGVTable: __x_ABI_C__FIOb
     }
 )
 typealias __x_ABI_C__FIObservableMap_2_HSTRING_HSTRINGWrapper = InterfaceWrapperBase<WindowsFoundation.__x_ABI_C__FIObservableMap_2_HSTRING_HSTRINGBridge>
-public class IObservableMapString_String: WindowsFoundation.IInspectable {
+internal class IObservableMapString_String: WindowsFoundation.IInspectable {
     override public class var IID: WindowsFoundation.IID { IID___x_ABI_C__FIObservableMap_2_HSTRING_HSTRING }
 
-    open func add_MapChanged(_ vhnd: MapChangedEventHandler<String, String>?) throws -> EventRegistrationToken {
+    internal func add_MapChangedImpl(_ vhnd: MapChangedEventHandler<String, String>?) throws -> EventRegistrationToken {
         var result: EventRegistrationToken = .init()
         let vhndWrapper = WindowsFoundation.__x_ABI_C__FMapChangedEventHandler_2_HSTRING_HSTRINGWrapper(vhnd)
         let _vhnd = try! vhndWrapper?.toABI { $0 }
@@ -2032,7 +1963,7 @@ public class IObservableMapString_String: WindowsFoundation.IInspectable {
         return result
     }
 
-    open func remove_MapChanged(_ token: EventRegistrationToken) throws {
+    internal func remove_MapChangedImpl(_ token: EventRegistrationToken) throws {
         _ = try perform(as: __x_ABI_C__FIObservableMap_2_HSTRING_HSTRING.self) { pThis in
             try CHECKED(pThis.pointee.lpVtbl.pointee.remove_MapChanged(pThis, token))
         }
@@ -2071,10 +2002,10 @@ fileprivate class __x_ABI_C__FIObservableMap_2_HSTRING_HSTRINGImpl : IObservable
       .init(
         add: { [weak self] in
           guard let this = self?._default else { return .init() }
-          return try! this.add_MapChanged($0)
+          return try! this.add_MapChangedImpl($0)
         },
         remove: { [weak self] in
-         try? self?._default.remove_MapChanged($0)
+         try? self?._default.remove_MapChangedImpl($0)
        }
       )
     }()
@@ -2082,43 +2013,43 @@ fileprivate class __x_ABI_C__FIObservableMap_2_HSTRING_HSTRINGImpl : IObservable
     private lazy var _IMap: IMapString_String! = getInterfaceForCaching()
     /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.iobservablemap-2.lookup)
     fileprivate func lookup(_ key: String) -> String {
-        try! _IMap.Lookup(key)
+        try! _IMap.LookupImpl(key)
     }
 
     /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.iobservablemap-2.haskey)
     fileprivate func hasKey(_ key: String) -> Bool {
-        try! _IMap.HasKey(key)
+        try! _IMap.HasKeyImpl(key)
     }
 
     /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.iobservablemap-2.getview)
     fileprivate func getView() -> WindowsFoundation.AnyIMapView<String, String>? {
-        try! _IMap.GetView()
+        try! _IMap.GetViewImpl()
     }
 
     /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.iobservablemap-2.insert)
     fileprivate func insert(_ key: String, _ value: String) -> Bool {
-        try! _IMap.Insert(key, value)
+        try! _IMap.InsertImpl(key, value)
     }
 
     /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.iobservablemap-2.remove)
     fileprivate func remove(_ key: String) {
-        try! _IMap.Remove(key)
+        try! _IMap.RemoveImpl(key)
     }
 
     /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.iobservablemap-2.clear)
     fileprivate func clear() {
-        try! _IMap.Clear()
+        try! _IMap.ClearImpl()
     }
 
     /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.iobservablemap-2.size)
     fileprivate var size : UInt32 {
-        get { try! _IMap.get_Size() }
+        get { try! _IMap.get_SizeImpl() }
     }
 
     private lazy var _IIterable: IIterableIKeyValuePairString_String! = getInterfaceForCaching()
     /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.iobservablemap-2.first)
     fileprivate func first() -> WindowsFoundation.AnyIIterator<WindowsFoundation.AnyIKeyValuePair<String, String>?>? {
-        try! _IIterable.First()
+        try! _IIterable.FirstImpl()
     }
 
     public func queryInterface(_ iid: WindowsFoundation.IID) -> IUnknownRef? { nil }
@@ -2183,21 +2114,13 @@ internal var __x_ABI_C__FIVectorView_1___x_ABI_CWindows__CFoundation__CIWwwFormU
         return S_OK
     },
 
-    GetMany: {
-        guard let __unwrapped__instance = __x_ABI_C__FIVectorView_1___x_ABI_CWindows__CFoundation__CIWwwFormUrlDecoderEntryWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
-        let startIndex: UInt32 = $1
-        var items: [WindowsFoundation.AnyIWwwFormUrlDecoderEntry?] = .from(abiBridge: __IMPL_Windows_Foundation.IWwwFormUrlDecoderEntryBridge.self, abi: (count: $2, start: $3))
-        let result = __unwrapped__instance.getMany(startIndex, &items)
-        items.fill(abi: $3, abiBridge: __IMPL_Windows_Foundation.IWwwFormUrlDecoderEntryBridge.self)
-        $4?.initialize(to: result)
-        return S_OK
-    }
+    GetMany: { _, _, _, _, _ in return failWith(err: E_NOTIMPL) }
 )
 typealias __x_ABI_C__FIVectorView_1___x_ABI_CWindows__CFoundation__CIWwwFormUrlDecoderEntryWrapper = InterfaceWrapperBase<WindowsFoundation.__x_ABI_C__FIVectorView_1___x_ABI_CWindows__CFoundation__CIWwwFormUrlDecoderEntryBridge>
-public class IVectorViewIWwwFormUrlDecoderEntry: WindowsFoundation.IInspectable {
+internal class IVectorViewIWwwFormUrlDecoderEntry: WindowsFoundation.IInspectable {
     override public class var IID: WindowsFoundation.IID { IID___x_ABI_C__FIVectorView_1___x_ABI_CWindows__CFoundation__CIWwwFormUrlDecoderEntry }
 
-    open func GetAt(_ index: UInt32) throws -> WindowsFoundation.AnyIWwwFormUrlDecoderEntry? {
+    internal func GetAtImpl(_ index: UInt32) throws -> WindowsFoundation.AnyIWwwFormUrlDecoderEntry? {
         let (result) = try ComPtrs.initialize { resultAbi in
             _ = try perform(as: __x_ABI_C__FIVectorView_1___x_ABI_CWindows__CFoundation__CIWwwFormUrlDecoderEntry.self) { pThis in
                 try CHECKED(pThis.pointee.lpVtbl.pointee.GetAt(pThis, index, &resultAbi))
@@ -2206,7 +2129,7 @@ public class IVectorViewIWwwFormUrlDecoderEntry: WindowsFoundation.IInspectable 
         return __ABI_Windows_Foundation.IWwwFormUrlDecoderEntryWrapper.unwrapFrom(abi: result)
     }
 
-    open func get_Size() throws -> UInt32 {
+    internal func get_SizeImpl() throws -> UInt32 {
         var result: UINT32 = 0
         _ = try perform(as: __x_ABI_C__FIVectorView_1___x_ABI_CWindows__CFoundation__CIWwwFormUrlDecoderEntry.self) { pThis in
             try CHECKED(pThis.pointee.lpVtbl.pointee.get_Size(pThis, &result))
@@ -2214,7 +2137,7 @@ public class IVectorViewIWwwFormUrlDecoderEntry: WindowsFoundation.IInspectable 
         return result
     }
 
-    open func IndexOf(_ value: WindowsFoundation.AnyIWwwFormUrlDecoderEntry?, _ index: inout UInt32) throws -> Bool {
+    internal func IndexOfImpl(_ value: WindowsFoundation.AnyIWwwFormUrlDecoderEntry?, _ index: inout UInt32) throws -> Bool {
         var result: boolean = 0
         let valueWrapper = __ABI_Windows_Foundation.IWwwFormUrlDecoderEntryWrapper(value)
         let _value = try! valueWrapper?.toABI { $0 }
@@ -2222,17 +2145,6 @@ public class IVectorViewIWwwFormUrlDecoderEntry: WindowsFoundation.IInspectable 
             try CHECKED(pThis.pointee.lpVtbl.pointee.IndexOf(pThis, _value, &index, &result))
         }
         return .init(from: result)
-    }
-
-    open func GetMany(_ startIndex: UInt32, _ items: inout [WindowsFoundation.AnyIWwwFormUrlDecoderEntry?]) throws -> UInt32 {
-        var result: UINT32 = 0
-        try items.toABI(abiBridge: __IMPL_Windows_Foundation.IWwwFormUrlDecoderEntryBridge.self) { _items in
-            _ = try perform(as: __x_ABI_C__FIVectorView_1___x_ABI_CWindows__CFoundation__CIWwwFormUrlDecoderEntry.self) { pThis in
-                try CHECKED(pThis.pointee.lpVtbl.pointee.GetMany(pThis, startIndex, _items.count, _items.start, &result))
-            }
-        items = .from(abiBridge: __IMPL_Windows_Foundation.IWwwFormUrlDecoderEntryBridge.self, abi: _items)
-        }
-        return result
     }
 
 }
@@ -2284,28 +2196,23 @@ fileprivate class __x_ABI_C__FIVectorView_1___x_ABI_CWindows__CFoundation__CIWww
     // MARK: WinRT
     /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.ivectorview-1.getat)
     fileprivate func getAt(_ index: UInt32) -> WindowsFoundation.AnyIWwwFormUrlDecoderEntry? {
-        try! _default.GetAt(index)
+        try! _default.GetAtImpl(index)
     }
 
     /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.ivectorview-1.indexof)
     fileprivate func indexOf(_ value: WindowsFoundation.AnyIWwwFormUrlDecoderEntry?, _ index: inout UInt32) -> Bool {
-        try! _default.IndexOf(value, &index)
-    }
-
-    /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.ivectorview-1.getmany)
-    fileprivate func getMany(_ startIndex: UInt32, _ items: inout [WindowsFoundation.AnyIWwwFormUrlDecoderEntry?]) -> UInt32 {
-        try! _default.GetMany(startIndex, &items)
+        try! _default.IndexOfImpl(value, &index)
     }
 
     /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.ivectorview-1.size)
     fileprivate var size : UInt32 {
-        get { try! _default.get_Size() }
+        get { try! _default.get_SizeImpl() }
     }
 
     private lazy var _IIterable: IIterableIWwwFormUrlDecoderEntry! = getInterfaceForCaching()
     /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.ivectorview-1.first)
     fileprivate func first() -> WindowsFoundation.AnyIIterator<WindowsFoundation.AnyIWwwFormUrlDecoderEntry?>? {
-        try! _IIterable.First()
+        try! _IIterable.FirstImpl()
     }
 
     public func queryInterface(_ iid: WindowsFoundation.IID) -> IUnknownRef? { nil }
@@ -2327,20 +2234,18 @@ internal var __x_ABI_C__FMapChangedEventHandler_2_HSTRING_IInspectableVTable: __
     AddRef: { __x_ABI_C__FMapChangedEventHandler_2_HSTRING_IInspectableWrapper.addRef($0) },
     Release: { __x_ABI_C__FMapChangedEventHandler_2_HSTRING_IInspectableWrapper.release($0) },
     Invoke: {
-        do {
-            guard let __unwrapped__instance = __x_ABI_C__FMapChangedEventHandler_2_HSTRING_IInspectableWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
-            let sender: WindowsFoundation.AnyIObservableMap<String, Any?>? = WindowsFoundation.__x_ABI_C__FIObservableMap_2_HSTRING_IInspectableWrapper.unwrapFrom(abi: ComPtr($1))
-            let event: WindowsFoundation.AnyIMapChangedEventArgs<String>? = WindowsFoundation.__x_ABI_C__FIMapChangedEventArgs_1_HSTRINGWrapper.unwrapFrom(abi: ComPtr($2))
-            try __unwrapped__instance(sender, event)
-            return S_OK
-        } catch { return failWith(error: error) }
+        guard let __unwrapped__instance = __x_ABI_C__FMapChangedEventHandler_2_HSTRING_IInspectableWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
+        let sender: WindowsFoundation.AnyIObservableMap<String, Any?>? = WindowsFoundation.__x_ABI_C__FIObservableMap_2_HSTRING_IInspectableWrapper.unwrapFrom(abi: ComPtr($1))
+        let event: WindowsFoundation.AnyIMapChangedEventArgs<String>? = WindowsFoundation.__x_ABI_C__FIMapChangedEventArgs_1_HSTRINGWrapper.unwrapFrom(abi: ComPtr($2))
+        __unwrapped__instance(sender, event)
+        return S_OK
     }
 )
 typealias __x_ABI_C__FMapChangedEventHandler_2_HSTRING_IInspectableWrapper = InterfaceWrapperBase<WindowsFoundation.__x_ABI_C__FMapChangedEventHandler_2_HSTRING_IInspectableBridge>
-public class MapChangedEventHandlerString_Any: WindowsFoundation.IUnknown {
+internal class MapChangedEventHandlerString_Any: WindowsFoundation.IUnknown {
     override public class var IID: WindowsFoundation.IID { IID___x_ABI_C__FMapChangedEventHandler_2_HSTRING_IInspectable }
 
-    open func Invoke(_ sender: WindowsFoundation.AnyIObservableMap<String, Any?>?, _ event: WindowsFoundation.AnyIMapChangedEventArgs<String>?) throws {
+    internal func InvokeImpl(_ sender: WindowsFoundation.AnyIObservableMap<String, Any?>?, _ event: WindowsFoundation.AnyIMapChangedEventArgs<String>?) throws {
         let senderWrapper = WindowsFoundation.__x_ABI_C__FIObservableMap_2_HSTRING_IInspectableWrapper(sender)
         let _sender = try! senderWrapper?.toABI { $0 }
         let eventWrapper = WindowsFoundation.__x_ABI_C__FIMapChangedEventArgs_1_HSTRINGWrapper(event)
@@ -2361,7 +2266,7 @@ internal class __x_ABI_C__FMapChangedEventHandler_2_HSTRING_IInspectableBridge :
         guard let abi = abi else { return nil }
         let _default = SwiftABI(abi)
         let handler: Handler = { (sender, event) in
-            try _default.Invoke(sender, event)
+            try! _default.InvokeImpl(sender, event)
         }
         return handler
     }
@@ -2382,20 +2287,18 @@ internal var __x_ABI_C__FMapChangedEventHandler_2_HSTRING_HSTRINGVTable: __x_ABI
     AddRef: { __x_ABI_C__FMapChangedEventHandler_2_HSTRING_HSTRINGWrapper.addRef($0) },
     Release: { __x_ABI_C__FMapChangedEventHandler_2_HSTRING_HSTRINGWrapper.release($0) },
     Invoke: {
-        do {
-            guard let __unwrapped__instance = __x_ABI_C__FMapChangedEventHandler_2_HSTRING_HSTRINGWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
-            let sender: WindowsFoundation.AnyIObservableMap<String, String>? = WindowsFoundation.__x_ABI_C__FIObservableMap_2_HSTRING_HSTRINGWrapper.unwrapFrom(abi: ComPtr($1))
-            let event: WindowsFoundation.AnyIMapChangedEventArgs<String>? = WindowsFoundation.__x_ABI_C__FIMapChangedEventArgs_1_HSTRINGWrapper.unwrapFrom(abi: ComPtr($2))
-            try __unwrapped__instance(sender, event)
-            return S_OK
-        } catch { return failWith(error: error) }
+        guard let __unwrapped__instance = __x_ABI_C__FMapChangedEventHandler_2_HSTRING_HSTRINGWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
+        let sender: WindowsFoundation.AnyIObservableMap<String, String>? = WindowsFoundation.__x_ABI_C__FIObservableMap_2_HSTRING_HSTRINGWrapper.unwrapFrom(abi: ComPtr($1))
+        let event: WindowsFoundation.AnyIMapChangedEventArgs<String>? = WindowsFoundation.__x_ABI_C__FIMapChangedEventArgs_1_HSTRINGWrapper.unwrapFrom(abi: ComPtr($2))
+        __unwrapped__instance(sender, event)
+        return S_OK
     }
 )
 typealias __x_ABI_C__FMapChangedEventHandler_2_HSTRING_HSTRINGWrapper = InterfaceWrapperBase<WindowsFoundation.__x_ABI_C__FMapChangedEventHandler_2_HSTRING_HSTRINGBridge>
-public class MapChangedEventHandlerString_String: WindowsFoundation.IUnknown {
+internal class MapChangedEventHandlerString_String: WindowsFoundation.IUnknown {
     override public class var IID: WindowsFoundation.IID { IID___x_ABI_C__FMapChangedEventHandler_2_HSTRING_HSTRING }
 
-    open func Invoke(_ sender: WindowsFoundation.AnyIObservableMap<String, String>?, _ event: WindowsFoundation.AnyIMapChangedEventArgs<String>?) throws {
+    internal func InvokeImpl(_ sender: WindowsFoundation.AnyIObservableMap<String, String>?, _ event: WindowsFoundation.AnyIMapChangedEventArgs<String>?) throws {
         let senderWrapper = WindowsFoundation.__x_ABI_C__FIObservableMap_2_HSTRING_HSTRINGWrapper(sender)
         let _sender = try! senderWrapper?.toABI { $0 }
         let eventWrapper = WindowsFoundation.__x_ABI_C__FIMapChangedEventArgs_1_HSTRINGWrapper(event)
@@ -2416,7 +2319,7 @@ internal class __x_ABI_C__FMapChangedEventHandler_2_HSTRING_HSTRINGBridge : WinR
         guard let abi = abi else { return nil }
         let _default = SwiftABI(abi)
         let handler: Handler = { (sender, event) in
-            try _default.Invoke(sender, event)
+            try! _default.InvokeImpl(sender, event)
         }
         return handler
     }
@@ -2437,20 +2340,18 @@ internal var __x_ABI_C__FITypedEventHandler_2___x_ABI_CWindows__CFoundation__CIM
     AddRef: { __x_ABI_C__FITypedEventHandler_2___x_ABI_CWindows__CFoundation__CIMemoryBufferReference_IInspectableWrapper.addRef($0) },
     Release: { __x_ABI_C__FITypedEventHandler_2___x_ABI_CWindows__CFoundation__CIMemoryBufferReference_IInspectableWrapper.release($0) },
     Invoke: {
-        do {
-            guard let __unwrapped__instance = __x_ABI_C__FITypedEventHandler_2___x_ABI_CWindows__CFoundation__CIMemoryBufferReference_IInspectableWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
-            let sender: WindowsFoundation.AnyIMemoryBufferReference? = __ABI_Windows_Foundation.IMemoryBufferReferenceWrapper.unwrapFrom(abi: ComPtr($1))
-            let args: Any? = __ABI_.AnyWrapper.unwrapFrom(abi: ComPtr($2))
-            try __unwrapped__instance(sender, args)
-            return S_OK
-        } catch { return failWith(error: error) }
+        guard let __unwrapped__instance = __x_ABI_C__FITypedEventHandler_2___x_ABI_CWindows__CFoundation__CIMemoryBufferReference_IInspectableWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
+        let sender: WindowsFoundation.AnyIMemoryBufferReference? = __ABI_Windows_Foundation.IMemoryBufferReferenceWrapper.unwrapFrom(abi: ComPtr($1))
+        let args: Any? = __ABI_.AnyWrapper.unwrapFrom(abi: ComPtr($2))
+        __unwrapped__instance(sender, args)
+        return S_OK
     }
 )
 typealias __x_ABI_C__FITypedEventHandler_2___x_ABI_CWindows__CFoundation__CIMemoryBufferReference_IInspectableWrapper = InterfaceWrapperBase<WindowsFoundation.__x_ABI_C__FITypedEventHandler_2___x_ABI_CWindows__CFoundation__CIMemoryBufferReference_IInspectableBridge>
-public class TypedEventHandlerIMemoryBufferReference_Any: WindowsFoundation.IUnknown {
+internal class TypedEventHandlerIMemoryBufferReference_Any: WindowsFoundation.IUnknown {
     override public class var IID: WindowsFoundation.IID { IID___x_ABI_C__FITypedEventHandler_2___x_ABI_CWindows__CFoundation__CIMemoryBufferReference_IInspectable }
 
-    open func Invoke(_ sender: WindowsFoundation.AnyIMemoryBufferReference?, _ args: Any?) throws {
+    internal func InvokeImpl(_ sender: WindowsFoundation.AnyIMemoryBufferReference?, _ args: Any?) throws {
         let senderWrapper = __ABI_Windows_Foundation.IMemoryBufferReferenceWrapper(sender)
         let _sender = try! senderWrapper?.toABI { $0 }
         let argsWrapper = __ABI_.AnyWrapper(args)
@@ -2471,15 +2372,15 @@ internal class __x_ABI_C__FITypedEventHandler_2___x_ABI_CWindows__CFoundation__C
         guard let abi = abi else { return nil }
         let _default = SwiftABI(abi)
         let handler: Handler = { (sender, args) in
-            try _default.Invoke(sender, args)
+            try! _default.InvokeImpl(sender, args)
         }
         return handler
     }
 }
 public extension EventSource where Handler == TypedEventHandler<IMemoryBufferReference?, Any?> {
-    func invoke(_ sender: WindowsFoundation.AnyIMemoryBufferReference!, _ args: Any!) throws {
+    func invoke(_ sender: WindowsFoundation.AnyIMemoryBufferReference!, _ args: Any!) {
         for handler in getInvocationList() {
-            try handler(sender, args)
+            handler(sender, args)
         }
     }
 }
