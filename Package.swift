@@ -8,7 +8,10 @@ let package = Package(
         .library(name: "WindowsFoundation", type: .dynamic, targets: ["WindowsFoundation"]),
     ],
     dependencies: [
-        .package(url: "https://github.com/thebrowsercompany/swift-cwinrt", branch: "main"),
+        .package(
+            url: "https://github.com/thebrowsercompany/swift-cwinrt",
+            revision: "eb46cdb66f770a1e006f9fcfebbf9e99a0fba811"
+        ),
     ],
     targets: [
         .target(
