@@ -9,8 +9,8 @@ let package = Package(
     ],
     dependencies: [
         .package(
-            url: "https://github.com/thebrowsercompany/swift-cwinrt",
-            revision: "eb46cdb66f770a1e006f9fcfebbf9e99a0fba811"
+            url: "https://github.com/moreSwift/swift-cwinrt",
+            .upToNextMinor(from: "0.1.0")
         ),
     ],
     targets: [
